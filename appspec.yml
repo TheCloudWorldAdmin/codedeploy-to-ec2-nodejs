@@ -5,7 +5,7 @@ files:
     destination: /home/ubuntu
 hooks:
   AfterInstall:
-     - location: /beforeinstall.sh
+     - location: beforeinstall.sh
        timeout: 300
   ApplicationStart:
-    - location: /applicationstart.sh
+    - location: applicationstart.sh
