@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cd /home/ubuntu
-npm install
-pm2 start server.js
+npm -f install
+pm2 -f start server.js
