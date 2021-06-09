@@ -8,7 +8,7 @@ phases:
     - mkdir nodejs
   build:
     commands:
-      - cp * nodejs
+      - 
   post_build:
     commands:
 artifacts:
