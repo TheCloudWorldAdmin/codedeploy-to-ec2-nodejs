@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+  pre_build:
+    commands:
+    - mkdir nodejs
+  build:
+    commands:
+      - cp * nodejs
+  post_build:
+    commands:
+artifacts:
+  files:
