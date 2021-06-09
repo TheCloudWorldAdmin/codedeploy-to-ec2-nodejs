@@ -1,2 +1,2 @@
-#!bin/sh
-npm start
+#!bin/bash
+pm2 start server.js
