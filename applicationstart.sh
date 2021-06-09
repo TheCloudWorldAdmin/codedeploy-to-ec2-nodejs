@@ -1,4 +1,4 @@
 #!bin/bash
 
 cd /home/ubuntu
-pm2 start server.js
+sudo pm2 start server.js
