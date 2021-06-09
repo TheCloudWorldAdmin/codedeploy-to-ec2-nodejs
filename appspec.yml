@@ -5,8 +5,8 @@ files:
     destination: /home/ubuntu
 hooks:
   BeforeInstall:
-    - location: script/beforeinstall.sh
+    - location: public/beforeinstall.sh
       timeout: 300
   ApplicationStart:
-    - location: scripts/applicationstart.sh
+    - location: public/applicationstart.sh
       timeout: 300
