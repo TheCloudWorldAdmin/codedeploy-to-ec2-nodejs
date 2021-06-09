@@ -5,6 +5,6 @@ files:
     destination: /home/ubuntu
 hooks:
   BeforeInstall:
-    - location: /public/beforeinstall.sh
+    - location: /home/ubuntu/public/beforeinstall.sh
   ApplicationStart:
-    - location: /public/applicationstart.sh
+    - location: /home/ubuntu/public/applicationstart.sh
