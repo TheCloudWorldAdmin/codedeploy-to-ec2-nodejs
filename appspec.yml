@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu
+hooks:
+  BeforeInstall:
+    - location: script/beforeinstall.sh
+      timeout: 300
+  ApplicationStart:
+    - location: scripts/applicationstart.sh
+      timeout: 300
