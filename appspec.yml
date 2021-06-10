@@ -7,3 +7,6 @@ hooks:
   AfterInstall:
     - location: afterinstall.sh
       timeout: 500
+  ApplicationStart:
+    - location: applicationstart.sh
+      timout: 500
