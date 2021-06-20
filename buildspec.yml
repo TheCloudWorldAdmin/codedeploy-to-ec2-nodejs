@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install: 
+    runtime-versions:
+      nodejs: 10
+  build:
+    commands:
+      - echo "Package & Dependicies are getting installed"
+      - npm -f install
+      - echo "Packages have been installed"
+      - echon "Storing Build Artifact to the Location"
+artifacts:
+  type: zip
+  paths:
+    - '*'
