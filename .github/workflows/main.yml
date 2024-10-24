@@ -1,10 +1,10 @@
 name: codebuild
-
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
 
 env:
     TARGET_ROLE_ARN: "arn:aws:iam::925935005908:role/cross-account-codebuild"
