@@ -1,0 +1,31 @@
+name: codebuild
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+    TARGET_ROLE_ARN: "arn:aws:iam::925935005908:role/cross-account-codebuild"
+    TARGET_AWS_REGION: "us-east-1"
+
+jobs:
+  build:
+    runs-on: codebuild-GitHubActionsDemo-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - name: Run shell commands
+        run: |
+          echo "Assuming role in Account B..."
+          >
+          CREDENTIALS=$(aws sts assume-role --role-arn $TARGET_ROLE_ARN 
+          --role-session-name CodeBuildSession 
+          --query 'Credentials.[AccessKeyId,SecretAccessKey,SessionToken]' 
+          --output text)
+          export AWS_ACCESS_KEY_ID=$(echo $CREDENTIALS | cut -d' ' -f1)
+          export AWS_SECRET_ACCESS_KEY=$(echo $CREDENTIALS | cut -d' ' -f2)
+          export AWS_SESSION_TOKEN=$(echo $CREDENTIALS | cut -d' ' -f3)
+          pip install awscli # If using AWS CLI
+          echo "Running a shell command!"
+          echo "This is a test file." > test.txt
+          aws s3 cp test.txt s3://tcw-thecloudworld-codebuild --recursive
