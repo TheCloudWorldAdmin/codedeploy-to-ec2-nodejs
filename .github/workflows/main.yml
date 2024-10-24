@@ -12,7 +12,7 @@ env:
 
 jobs:
   build:
-    runs-on: codebuild-GitHubActionsDemo-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: codebuild-gh-actions-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
       - name: Run shell commands
         run: |
